@@ -123,7 +123,6 @@ In order to conform to SCPS4, the project **must**:
 * Conform to [SCPS5](#SCPS5).
 * Have exactly 0 pre-build steps.
 * All headers must have a file extension of `.h`.
-* Have differing functionality toggled by define switches **only**.
 * If a library, be able to be linked via single invocation of most linkers/archivers.
 
 ### Examples
@@ -135,6 +134,7 @@ In order to conform to SCPS4, the project **must**:
 In order to conform to SCPS3, the project **must**:
 
 * Conform to [SCPS4](#SCPS4).
+* Have differing functionality toggled by define switches **only**.
 * Bundle dependencies as git submodules, or folders under directory `/lib`.
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
