@@ -93,7 +93,7 @@ are acceptable.
 
 ## SCPS5
 
-In order to conform to SCPS5, the project *must*:
+In order to conform to SCPS5, the project **must**:
 
 * Be licensed in a under an open-source license. (MIT, Apache, etc..)
 * Be a git repository, publically accessible via HTTPS.
@@ -118,12 +118,12 @@ excluded.
 
 ## SCPS4
 
-In order to conform to SCPS4, the project *must*:
+In order to conform to SCPS4, the project **must**:
 
-* Conform to SCPS5.
+* Conform to [SCPS5](#SCPS5).
 * Have exactly 0 pre-build steps.
 * All headers must have a file extension of `.h`.
-* Have differing functionality toggled by define switches *only*.
+* Have differing functionality toggled by define switches **only**.
 * If a library, be able to be linked via single invocation of most linkers.
 
 ### Examples
@@ -132,9 +132,9 @@ In order to conform to SCPS4, the project *must*:
 
 ## SCPS3
 
-In order to conform to SCPS3, the project *must*:
+In order to conform to SCPS3, the project **must**:
 
-* Conform to SCPS4.
+* Conform to [SCPS4](#SCPS4).
 * Bundle dependencies as git submodules, or folders under directory `/lib`.
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
@@ -149,12 +149,12 @@ independent files, or bash-like wildcards, and no more than two required
 
 ## SCPS2
 
-In order to conform to SCPS2, the project *must*:
+In order to conform to SCPS2, the project **must**:
 
-* Conform to SCPS3.
+* Conform to [SCPS3](#SCPS3).
 * Have all source code be either C, or C++.
 * Have no linking, or include dependencies.
-* The SDT must contain no directories that contain source code.
+* Have the *SDT* contain no directories that contain source code.
 
 ### Examples
 
@@ -164,17 +164,17 @@ In order to conform to SCPS2, the project *must*:
 
 ## SCPS1 (Header-Only Libraries)
 
-This is the most restrictive form of the SCPS, and takes the form
+This is the most restrictive form of the *SCPS*, and takes the form
 of a header-only library. These are commonplace in C and C++, and
 represent an extremely simple form of library, that can be included
 in a project with a simple set of `#include` statements. Occasionally,
 this will also require the use of a definition in a single source file
 to emit the actual implementation for the interface.
 
-In order to conform to SCPS1, the project *must*:
+In order to conform to SCPS1, the project **must**:
 
-* Conform to SCPS2.
-* The SDT contains *only* header files.
+* Conform to [SCPS2](#SCPS2).
+* Have the *SDT* contain **only** header files.
 * No independent build process is necessary.
 
 ### Examples
@@ -183,13 +183,13 @@ In order to conform to SCPS1, the project *must*:
 
 ## SCPS0 (Single Header-Only Libraries)
 
-A special case of SCPS1, where one repository has exactly
+A special case of [SCPS1](#SCPS1), where one repository has exactly
 one header file to be included.
 
-In order to conform to SCPS1, the project *must*:
+In order to conform to [SCPS1](#SCPS1), the project **must**:
 
-* Conform to SCPS1.
-* SDT should contain exactly one header file.
+* Conform to [SCPS1](#SCPS1).
+* *SDT* should contain exactly one header file.
 
 ### Examples
 
