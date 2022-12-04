@@ -7,6 +7,13 @@ that allows for easy interoperability with compilers, build-systems,
 and linking programs. There are six levels of the standard, each 
 with a more severe degree of simplicity.
 
+* [SCPS5](#SCPS5)
+* [SCPS4](#SCPS4)
+* [SCPS3](#SCPS3)
+* [SCPS2](#SCPS2)
+* [SCPS1](#SCPS1)
+* [SCPS0](#SCPS0)
+
 ## Introduction
 
 C currently has no de-facto standard package manager. As such, when 
