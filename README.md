@@ -38,11 +38,23 @@ that are extremely straightforward to pull off-the-shelf, and integrate
 into any project without regard to build system, or complex build
 dependencies.
 
-## Definition of the SCPS
+This is also meant to be a **rule of thumb**, rather than anything
+extra-rigorous; an easy way to identify libraries that are straightforward
+to integrate.
+
+It is not attempt to make any sort of software that handles dependencies
+automatically.
+
+## Definitions
 
 SCPS has six progressively more restrictive levels. 
 
 The following terms are used in their definitions.
+
+### Paths
+
+`/` is defined as the repository root, not the system VFS root in this
+standard, unless otherwise stated.
 
 ### Define Switch
 
@@ -56,7 +68,8 @@ A directory tree containing all source files necessary to build the
 application. An SDT is defined as only the directories which contain
 source code necessary for a simple build of the application; test
 code, or example programs, so long as they are indepedent directories
-that are either siblings, or ancestors of the SDT are excluded.
+that are either siblings or ancestors of the SDT, or are in the repository
+root are excluded from the SDT definition.
 
 ### Source Code
 
@@ -77,19 +90,19 @@ In order to conform to SCPS5, the project *must*:
 
 * Be licensed in a under an open-source license. (MIT, Apache, etc..)
 * Be a git repository, publically accessible via HTTPS.
-* Have all source code necessary in a single source directory tree.
-* Have the *SDT* located at either `.` or `src`.
+* Have all source code necessary in a single *SDT*.
+* Have the *SDT* located at either `/` or `/src`.
 * Have all headers and included files have a file extension of `.h` or `.hpp`
 * If C, conforms to the C standard <=C11. If C++, confirms to <=C++11.
+* Be able to be compiled via a single invocation of most compilers.
+* Have no more than three simple pre-build steps. (i.e. copying
+input config files, writing simple configuration files, etc..)
 * Contain a README/README.md with a list of all dependencies, as well
 as all necessary steps to build the library on a standard POSIX system 
 using `gcc`/`g++`, or `clang`, including a sample build command that 
 should work on most POSIX systems, if all dependencies are built and
-installed. If no build (SCPS1 or SCPS0), or dependencies, can be 
+installed. If no independent build (SCPS1 or SCPS0), or dependencies, can be 
 excluded.
-* Be able to be compiled via a single invocation of most compilers.
-* Have no more than three simple pre-build steps. (i.e. copying
-input config files, writing simple configuration files, etc..)
 
 ### Example
 
@@ -115,7 +128,7 @@ In order to conform to SCPS4, the project *must*:
 In order to conform to SCPS3, the project *must*:
 
 * Conform to SCPS4.
-* Bundle dependencies as git submodules, or folders under directory `lib`.
+* Bundle dependencies as git submodules, or folders under directory `/lib`.
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
 * Single line invocation of compiler must target no more than two 
