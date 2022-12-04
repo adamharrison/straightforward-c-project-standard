@@ -124,7 +124,7 @@ In order to conform to SCPS4, the project **must**:
 * Have exactly 0 pre-build steps.
 * All headers must have a file extension of `.h`.
 * Have differing functionality toggled by define switches **only**.
-* If a library, be able to be linked via single invocation of most linkers.
+* If a library, be able to be linked via single invocation of most linkers/archivers.
 
 ### Examples
 
