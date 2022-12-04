@@ -132,7 +132,7 @@ independent files, or bash-like wildcards, and no more than two required
 In order to conform to SCPS2, the project *must*:
 
 * Conform to SCPS3.
-* Have no linking dependencies.
+* Have no linking, or include dependencies.
 * The SDT must contain no directories that contain source code.
 
 ### Examples
