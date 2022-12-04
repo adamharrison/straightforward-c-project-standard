@@ -134,13 +134,13 @@ In order to conform to SCPS4, the project **must**:
 In order to conform to SCPS3, the project **must**:
 
 * Conform to [SCPS4](#SCPS4).
-* Have differing functionality toggled by define switches **only**.
+* Have differing functionality toggled by define switches **only**, with no 
+required define switches.
 * Bundle dependencies as git submodules, or folders under directory `/lib`.
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
 * Single line invocation of compiler must target no more than two 
-independent files, or bash-like wildcards, and no more than two required
-*define switches* for *all* officially supported platforms.
+independent files, or bash-like wildcards.
 
 ### Examples
 
