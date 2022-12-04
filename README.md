@@ -4,7 +4,7 @@
 
 This document outlines a project structure for C(++) programs and libraries
 that allows for easy interoperability with compilers, build-systems, 
-and linking programs. There are three levels of the standard, each 
+and linking programs. There are five levels of the standard, each 
 with a more severe degree of simplicity.
 
 ## Introduction
@@ -28,6 +28,13 @@ definitions, or highly specific compilation paths.
 This standard *does not* preclude the use of these sophisticated
 build systems in a particular project, but rather allows the project
 to be build in such a way that foregoes these standards.
+
+### Rationale
+
+The goal of the standard is to make it easy to identify projects
+that are extremely straightforward to pull off-the-shelf, and integrate
+into any project without regard to build system, or complex build
+dependencies.
 
 ## Definition of the SCPS
 
@@ -89,6 +96,7 @@ excluded.
 In order to conform to SCPS3, the project *must*:
 
 * Be able to be compiled via a single invocation of most compilers.
+* If a library, be able to be linked via single invocation of most linkers.
 
 ### Example
 
@@ -111,8 +119,9 @@ independent files, or bash-like wildcards, and no more than two required
 ### Examples
 
 * https://github.com/rxi/microtar
-* https://github.com/lua/lua
-* https://github.com/adamharrison/lite-xl-simplified
+* https://github.com/lua/lua (README not in conformance)
+* https://github.com/adamharrison/lite-xl-simplified 
+* https://github.com/madler/zlib (README not in conformance)
 
 ## SCPS1 (Header-Only Libraries)
 
@@ -125,8 +134,8 @@ to emit the actual implementation for the interface.
 
 In order to conform to SCPS1, the project *must*:
 
-* Have all source code be either C, or C++.
 * Conform to SCPS2.
+* Have all source code be either C, or C++.
 * The SDT contains *only* header files.
 * No independent build process is necessary.
 
