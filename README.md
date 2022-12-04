@@ -4,7 +4,7 @@
 
 This document outlines a project structure for C(++) programs and libraries
 that allows for easy interoperability with compilers, build-systems, 
-and linking programs. There are five levels of the standard, each 
+and linking programs. There are six levels of the standard, each 
 with a more severe degree of simplicity.
 
 ## Introduction
@@ -18,16 +18,18 @@ compatible one is not available, or relying on ancient autoconfigs.
 These days, for *most* use cases, things are relatively simple. One
 is able to compile or cross-compile for the major operating systems
 with a relatively unified code-base, so long as one is not doing
-anything particular platform specific. Processors and compilers
-are now fast enough, that most one-off compiles do not require
-sophisticated build systems to manage intermediate objects, or
-dependency graphs of headers and source files. The vast majority
-of libraries do not need to bother with extremely precise flag
-definitions, or highly specific compilation paths.
+anything particularly platform specific, and are on a reasonably modern
+operating system. Processors and compilers are now fast enough, 
+that most one-off compiles do not require sophisticated build systems
+to manage intermediate objects, or dependency graphs of headers and 
+source files. The vast majority of libraries do not need to bother 
+with extremely precise flag definitions, or highly specific compilation 
+paths. 
 
 This standard *does not* preclude the use of these sophisticated
 build systems in a particular project, but rather allows the project
-to be build in such a way that foregoes these standards.
+to be structured in such a way that it can follow these standards for
+a simpler build process.
 
 ### Rationale
 
@@ -38,7 +40,7 @@ dependencies.
 
 ## Definition of the SCPS
 
-SCPS has five progressively more restrictive levels. 
+SCPS has six progressively more restrictive levels. 
 
 The following terms are used in their definitions.
 
@@ -69,9 +71,9 @@ that is contained within a single git repository, that performs
 a particular function. Monorepos containing multiple projects
 are acceptable.
 
-## SCPS4
+## SCPS5
 
-In order to conform to SCPS4, the project *must*:
+In order to conform to SCPS5, the project *must*:
 
 * Be licensed in a under an open-source license. (MIT, Apache, etc..)
 * Be a git repository, publically accessible via HTTPS.
@@ -87,33 +89,32 @@ installed. If no build (SCPS1 or SCPS0), or dependencies, can be
 excluded.
 * Be able to be compiled via a single invocation of most compilers.
 * Have no more than three simple pre-build steps. (i.e. copying
-input config files, writing simple inclusions, etc..)
+input config files, writing simple configuration files, etc..)
 
 ### Example
 
 * https://github.com/PCRE2Project/pcre2 (README non-conforming)
 * https://github.com/freetype/freetype (README non-conforming)
 
+## SCPS4
+
+In order to conform to SCPS4, the project *must*:
+
+* Conform to SCPS5.
+* Have exactly 0 pre-build steps.
+* All headers must have a file extension of `.h`.
+* Have differing functionality toggled by define switches *only*.
+* If a library, be able to be linked via single invocation of most linkers.
+
+### Examples
+
+* https://github.com/lite-xl/lite-xl (README non-conforming)
+
 ## SCPS3
 
 In order to conform to SCPS3, the project *must*:
 
-* Have exactly 0 pre-build steps.
-* Have differing functionality toggled by define switches *only*.
-* If a library, be able to be linked via single invocation of most linkers.
-
-### Example
-
-* https://github.com/lite-xl/lite-xl (README non-conforming)
-* https://github.com/adamharrison/lite-xl-plugin-manager
-
-## SCPS2
-
-In order to conform to SCPS2, the project *must*:
-
-* Conform to SCPS3.
-* The SDT must contain no directories that contain source code.
-* All headers must have a file extension of `.h`.
+* Conform to SCPS4.
 * Bundle dependencies as git submodules, or folders under directory `lib`.
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
@@ -123,8 +124,20 @@ independent files, or bash-like wildcards, and no more than two required
 
 ### Examples
 
-* https://github.com/rxi/microtar
+* https://github.com/adamharrison/lite-xl-plugin-manager
 * https://github.com/adamharrison/lite-xl-simplified 
+
+## SCPS2
+
+In order to conform to SCPS2, the project *must*:
+
+* Conform to SCPS3.
+* Have no linking dependencies.
+* The SDT must contain no directories that contain source code.
+
+### Examples
+
+* https://github.com/rxi/microtar
 * https://github.com/lua/lua (README non-conforming)
 * https://github.com/madler/zlib (README non-conforming)
 
