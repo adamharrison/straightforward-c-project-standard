@@ -72,6 +72,7 @@ In order to conform to SCPS4, the project *must*:
 * Have all source code necessary in a single source directory tree.
 * Have the *SDT* located at either `.` or `src`.
 * Have all headers and included files have a file extension of `.h` or `.hpp`
+* If C, conforms to the C standard <=C11. If C++, confirms to <=C++11.
 * Contain a README/README.md with a list of all dependencies, as well
 as all necessary steps to build the library on a standard POSIX system 
 using `gcc`/`g++`, or `clang`, including a sample build command that 
@@ -105,7 +106,7 @@ All dependencies must have relatively standard build steps without complex
 use of depedendency configuration options.
 * Single line invocation of compiler must target no more than two 
 independent files, or bash-like wildcards, and no more than two required
-*define switches*.
+*define switches* for *all* officially supported platforms.
 
 ### Examples
 
