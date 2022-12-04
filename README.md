@@ -75,7 +75,6 @@ In order to conform to SCPS4, the project *must*:
 
 * Be licensed in a under an open-source license. (MIT, Apache, etc..)
 * Be a git repository, publically accessible via HTTPS.
-* Have differing functionality toggled by define switches *only*.
 * Have all source code necessary in a single source directory tree.
 * Have the *SDT* located at either `.` or `src`.
 * Have all headers and included files have a file extension of `.h` or `.hpp`
@@ -86,21 +85,27 @@ using `gcc`/`g++`, or `clang`, including a sample build command that
 should work on most POSIX systems, if all dependencies are built and
 installed. If no build (SCPS1 or SCPS0), or dependencies, can be 
 excluded.
+* Be able to be compiled via a single invocation of most compilers.
+* Have no more than three simple pre-build steps. (i.e. copying
+input config files, writing simple inclusions, etc..)
 
 ### Example
 
-* https://github.com/adamharrison/lite-xl-plugin-manager
+* https://github.com/PCRE2Project/pcre2 (README non-conforming)
+* https://github.com/freetype/freetype (README non-conforming)
 
 ## SCPS3
 
 In order to conform to SCPS3, the project *must*:
 
-* Be able to be compiled via a single invocation of most compilers.
+* Have exactly 0 pre-build steps.
+* Have differing functionality toggled by define switches *only*.
 * If a library, be able to be linked via single invocation of most linkers.
 
 ### Example
 
 * https://github.com/lite-xl/lite-xl (README non-conforming)
+* https://github.com/adamharrison/lite-xl-plugin-manager
 
 ## SCPS2
 
