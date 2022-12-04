@@ -132,6 +132,7 @@ independent files, or bash-like wildcards, and no more than two required
 In order to conform to SCPS2, the project *must*:
 
 * Conform to SCPS3.
+* Have all source code be either C, or C++.
 * Have no linking, or include dependencies.
 * The SDT must contain no directories that contain source code.
 
@@ -153,7 +154,6 @@ to emit the actual implementation for the interface.
 In order to conform to SCPS1, the project *must*:
 
 * Conform to SCPS2.
-* Have all source code be either C, or C++.
 * The SDT contains *only* header files.
 * No independent build process is necessary.
 
