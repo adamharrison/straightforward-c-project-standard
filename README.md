@@ -71,12 +71,13 @@ In order to conform to SCPS4, the project *must*:
 * Have differing functionality toggled by define switches *only*.
 * Have all source code necessary in a single source directory tree.
 * Have the *SDT* located at either `.` or `src`.
-* All headers and included files have a file extension of `.h` or `.hpp`
-* Contains a README/README.md with a list of all dependencies, as well
+* Have all headers and included files have a file extension of `.h` or `.hpp`
+* Contain a README/README.md with a list of all dependencies, as well
 as all necessary steps to build the library on a standard POSIX system 
 using `gcc`/`g++`, or `clang`, including a sample build command that 
 should work on most POSIX systems, if all dependencies are built and
-installed.
+installed. If no build (SCPS1 or SCPS0), or dependencies, can be 
+excluded.
 
 ### Example
 
@@ -103,7 +104,8 @@ In order to conform to SCPS2, the project *must*:
 All dependencies must have relatively standard build steps without complex 
 use of depedendency configuration options.
 * Single line invocation of compiler must target no more than two 
-independent files, or bash-like wildcards.
+independent files, or bash-like wildcards, and no more than two required
+*define switches*.
 
 ### Examples
 
