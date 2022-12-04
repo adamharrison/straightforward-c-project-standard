@@ -86,7 +86,6 @@ installed.
 
 In order to conform to SCPS3, the project *must*:
 
-* Have all source code be either C, or C++.
 * Be able to be compiled via a single invocation of most compilers.
 
 ### Example
@@ -123,6 +122,7 @@ to emit the actual implementation for the interface.
 
 In order to conform to SCPS1, the project *must*:
 
+* Have all source code be either C, or C++.
 * Conform to SCPS2.
 * The SDT contains *only* header files.
 * No independent build process is necessary.
