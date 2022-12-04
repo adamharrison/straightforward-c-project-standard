@@ -100,7 +100,7 @@ In order to conform to SCPS3, the project *must*:
 
 ### Example
 
-* https://github.com/lite-xl/lite-xl
+* https://github.com/lite-xl/lite-xl (README non-conforming)
 
 ## SCPS2
 
@@ -119,9 +119,9 @@ independent files, or bash-like wildcards, and no more than two required
 ### Examples
 
 * https://github.com/rxi/microtar
-* https://github.com/lua/lua (README not in conformance)
 * https://github.com/adamharrison/lite-xl-simplified 
-* https://github.com/madler/zlib (README not in conformance)
+* https://github.com/lua/lua (README non-conforming)
+* https://github.com/madler/zlib (README non-conforming)
 
 ## SCPS1 (Header-Only Libraries)
 
