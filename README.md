@@ -168,7 +168,7 @@ one header file to be included.
 
 In order to conform to SCPS1, the project *must*:
 
-* Conform to SCPS0.
+* Conform to SCPS1.
 * Contain exactly one `.h` or `.hpp` file.
 
 ### Examples
