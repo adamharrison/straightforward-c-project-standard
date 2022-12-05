@@ -91,6 +91,13 @@ that is contained within a single git repository, that performs
 a particular function. Monorepos containing multiple projects
 are acceptable.
 
+### Dependency
+
+In this document, when dependency is mentioned, unless otherwise
+stated, it is referring *only* to external dependencies by third party
+vendors; not system dependencies that are included with almost all versions
+of targeted platforms, such as: `winsock`, `libc`, or `pthread`.
+
 ## SCPS5
 
 In order to conform to SCPS5, the project **must**:
