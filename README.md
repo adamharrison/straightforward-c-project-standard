@@ -193,10 +193,10 @@ In order to conform to SCPS1, the project **must**:
 A special case of [SCPS1](#SCPS1), where one repository has exactly
 one header file to be included.
 
-In order to conform to [SCPS1](#SCPS1), the project **must**:
+In order to conform to [SCPS0](#SCPS0), the project **must**:
 
 * Conform to [SCPS1](#SCPS1).
-* *SDT* should contain exactly one header file.
+* Have *SDT* contain exactly one header file.
 
 ### Examples
 
