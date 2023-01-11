@@ -16,11 +16,11 @@ with a more severe degree of simplicity.
 
 ## Introduction
 
-C currently has no de-facto standard package manager. As such, when 
-integrating C libraries or projects into an overarching project, it
-can be a hassle to build the underlying library, requiring reading
-through documentation to determine the exact build process, if a
-compatible one is not available, or relying on ancient autoconfigs.
+C currently has no de-facto standard package manager, or build system. 
+As such, when integrating C libraries or projects into an overarching 
+project, it can be a hassle to build the underlying library, requiring
+reading through documentation to determine the exact build process, if 
+a compatible one is not available, or relying on ancient autoconfigs.
 
 These days, for *most* use cases, things are relatively simple. One
 is able to compile or cross-compile for the major operating systems
